@@ -197,23 +197,27 @@ span{
     margin-bottom: 5rem;
 }
 
-.services-container{
+.services-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch; /* Pastikan semua kotak memiliki tinggi yang sama */
     flex-wrap: wrap;
-    gap: 2rem;
-}
+    gap: 2rem; /* Jarak antar kotak */
+  }
 
 .services-container .services-box {
-    flex: 1 1 30rem;
+    flex: 1 1 30rem; /* Tetap fleksibel, tetapi dengan ukuran dasar yang sama */
     background: var(--second-bg-color);
     padding: 3rem 2rem 4rem;
     border-radius: 2rem;
     text-align: center;
-    border: .2rem solid var(--bg-color);
-    transition: .5s ease;
-}
+    border: 0.2rem solid var(--bg-color);
+    transition: 0.5s ease;
+    height: 100%; /* Pastikan tinggi kotak sama */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Konten di dalam kotak rata atas dan bawah */
+  }
 
 .services-container .services-box:hover {
     border-color: var(--main-color);
@@ -221,19 +225,22 @@ span{
     transition: .5s ease;
 }
 
-.services-box i {
-    font-size: 7rem;
-    color: var(--main-color);
-}
-
 .services-box h3 {
     font-size: 2.6rem;
-}
-
-.services-box p {
+    margin-bottom: 1rem; /* Jarak antara judul dan paragraf */
+  }
+  
+  .services-box p {
     font-size: 1.6rem;
     margin: 1rem 0 3rem;
-}
+    flex-grow: 1; /* Paragraf akan mengisi ruang yang tersedia */
+  }
+  
+  .services-box i {
+    font-size: 7rem;
+    color: var(--main-color);
+    margin-bottom: 1rem; /* Jarak antara ikon dan judul */
+  }
 
 .portfolio {
     background: var(--second-bg-color);
@@ -501,5 +508,41 @@ span{
         margin-top: 2rem;
     }
 }
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--second-bg-color);
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    width: 100%;
+    max-width: 40rem;
+    transition: 0.5s ease;
+  }
+  
+  .contact-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 1rem var(--main-color);
+  }
+  
+  .contact-item i {
+    font-size: 2.5rem;
+    color: var(--main-color);
+  }
+  
+  .contact-item p {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    margin: 0;
+  }
 
 
